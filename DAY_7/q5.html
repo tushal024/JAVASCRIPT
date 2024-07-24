@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1></h1> -->
+    <input type="text" name="" id="salary" placeholder="Enter Your Amount">
+    <button onclick="tax()">Count your Fainal Amount</button>
+    <h1 id="tax_fainal"> </h1>
+    <h1 id="fainal"></h1>
+
+
+
+
+    <script>
+
+        function tax() {
+           
+            let fainal_income, fainal_tax;
+
+            let income = document.getElementById("salary").value;
+
+            if (income <= 100) {
+                // fainal_tax = (income * tax1) / 100
+               
+                // fainal_income = income - fainal_tax;
+                document.getElementById("tax_fainal").innerText = ` No Discount`;
+                document.getElementById("fainal").innerText = `Fainal Amount Is: ${fainal_income}`;
+                // console.log(fainal_income);
+            }
+
+            else if (income > 100 && income <= 500) {
+
+                fainal_tax = (5 * income) / 100;
+               
+                fainal_income = income - fainal_tax;
+
+                document.getElementById("tax_fainal").innerText = ` Discount Is: ${fainal_tax}`;
+                document.getElementById("fainal").innerText = `Fainal Amount Is: ${fainal_income}`;
+            }
+
+            else if (income > 500 && income <= 1000) {
+
+                fainal_tax = (10 * income) / 100;
+               
+                fainal_income = income - fainal_tax;
+
+                document.getElementById("tax_fainal").innerText = ` Discount Is: ${fainal_tax}`;
+                document.getElementById("fainal").innerText = `Fainal Amount Is: ${fainal_income}`;
+            }
+
+            else if (income > 1000 ) {
+
+                fainal_tax = (15 * income) / 100;
+                fainal_income = income - fainal_tax;
+
+                document.getElementById("tax_fainal").innerText = ` Discount Is: ${fainal_tax}`;
+                document.getElementById("fainal").innerText = `Fainal Amount Is: ${fainal_income}`;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
