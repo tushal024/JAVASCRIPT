@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="data">
+        <button onclick="st()">click</button>
+        <h1 id="ans" ></h1>
+
+    <script>
+        function st(){
+           
+            let op = document.getElementById("data").value;
+
+            op >="A" && op <="Z" ? document.getElementById("ans").innerText=`UPPERCASE`
+            :op >="a" && op <="z" ? document.getElementById("ans").innerText=`LOWARCASE`
+            :op >="0" && op <="9" ? document.getElementById("ans").innerText=`DIGIT`
+            :document.getElementById("ans").innerText=`SPECIAL CHARACTER`
+        }
+    </script>
+</body>
+</html>
