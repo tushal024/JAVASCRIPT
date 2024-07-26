@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="data"> <br> <br>
+    <button onclick="st()">Click</button> <br><br>
+    <h2 id="h2"></h2>
+
+
+    <!-- <script src="/Q5.js"></script> -->
+<script>
+    function st(){
+
+        let password = document.getElementById("data").value;
+    
+          password.length < 6 ? document.getElementById("h2").innerText = `This password is weak`: password.length >= 6 && password.length <= 10 ?
+            document.getElementById("h2").innerText = `This password is medium` :  password.length > 10 ?
+            document.getElementById("h2").innerText = `This password is strong` : ""
+        }
+
+    
+</script>
+    
+</body>
+</html>                                                                                                                                                             

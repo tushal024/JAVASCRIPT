@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="data" placeholder="   Enter Temperature...">
+    <h2> Convert The Temperature To Fahrenheit For Press: f </h2>
+    <h2> Convert The Temperature To Celsius For Press: c </h2>
+
+    <input type="text" id="select" placeholder="   Plese Enter f or c...">
+
+    <h1 id="ans"></h1>
+    <button onclick="st()">Convert</button>
+    
+    <script>
+        function st(){
+            let num;
+
+            let a=+document.getElementById("data").value;
+            let b=document.getElementById("select").value;
+
+            if(b == "c"){
+                num = (a-32)*5/9;
+
+                document.getElementById("ans").innerText=`Celsius: ${num}`;
+
+            }
+            else if(b == "f"){
+                num = (9/5)*a +32;
+                document.getElementById("ans").innerText=`Celsius: ${num}`;
+
+            }
+            else{
+                document.getElementById("ans").innerText=`plese Enter c or f only`;
+            }
+
+        }
+    </script>
+</body>
+</html>
