@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="data" placeholder="  Enter Your Age...">
+    <button onclick="st()">Check Your Categorize </button>
+    <h1 id="ans"></h1>
+
+
+<script>
+    function st(){
+        let age=document.getElementById("data").value;
+
+        if( age>0 && age<=1){
+            document.getElementById("ans").innerText=`You Are In Infant Categorize`;
+        }
+       else if( age>1 && age<=12){
+            document.getElementById("ans").innerText=`You Are In Child Categorize`;
+        }
+        else if( age>12 && age<=19){
+            document.getElementById("ans").innerText=`You Are In Teenager Categorize`;
+        }
+        else if( age>19 && age<=64){
+            document.getElementById("ans").innerText=`You Are In Adult Categorize`;
+        }
+        else if( age>64 && age<=150){
+            document.getElementById("ans").innerText=`You Are In Senior Citizen Categorize`;
+        }
+
+    }
+</script>
+</body>
+</html>
