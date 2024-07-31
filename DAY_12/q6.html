@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6</title>
+</head>
+<body>
+    <div>
+        <label for="num">Enter  income :</label>
+        <input type="text" id="income">
+       <br>
+       <label for="num">Enter score :</label>
+       <input type="text" id="score">
+      <br>
+      <label for="num">Enter  amount :</label>
+      <input type="text" id="amount">
+     <br>
+
+        <button onclick="data()">click</button>
+        <br>
+        <h4 id="text"></h4>
+    </div>
+
+    <script>
+        function data(){
+
+let a=document.getElementById("income").value ;
+let b=document.getElementById("score").value ;
+let c=document.getElementById("amount").value ;
+
+
+if(a<=50000 && b<=700 && c<=a/2){
+    document.getElementById("text").innerText ="Eligible";
+}
+
+else{
+    document.getElementById("text").innerText ="Not Eligible";
+}
+
+}
+    </script>
+   
+</body>
+</html>
