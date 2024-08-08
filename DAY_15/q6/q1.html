@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function prime(num){
+
+            let sh=0
+            for(let a=1;a<=50;a++){
+                if(num%a==0){
+                    sh++;
+                }
+                if(sh==2){
+                    console.log(a);
+                }
+
+            }
+            if(sh==2){
+                console.log("prime");
+            }
+            else{
+                console.log(" not prime");
+            }
+
+        }
+
+
+        prime(50)
+    </script>
+</body>
+</html>

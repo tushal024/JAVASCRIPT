@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <center>
+    <h1 id="tex">HELLO UNNATI</h1>
+    <input type="text" name="" id="ChangeTex">
+    <button onclick="changeText()">Change Heading...</button>
+</center>
+
+    <script>
+
+        let changeText=()=>{
+            
+            let op= document.getElementById("ChangeTex").value
+
+            document.getElementById("tex").innerHTML=`${op}`;
+        }
+    </script>
+</body>
+</html>

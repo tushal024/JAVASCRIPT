@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" name="" id="numm">
+
+
+    <button onclick="Prime()">Check Nmber</button>
+    <h1 id="ans"></h1>
+
+    <script>
+
+
+
+
+
+
+    function Prime(){
+
+   num= document.getElementById("numm").value
+
+
+    let op=0;
+    for(x=1; x<=num;x++){
+
+        if(num%x==0){
+            op++;
+        }
+    }
+
+    if(op==2){
+        // console.log(`${num} prime`)
+        document.getElementById("ans").innerHTML=`True`
+
+    }
+    else{
+        document.getElementById("ans").innerHTML=` False`
+    }
+
+}
+
+Prime()
+    </script>
+</body>
+</html>
+
+
+
+
+
