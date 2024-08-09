@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="data">
+    <button onclick="rv()">Click</button>
+    <h1 id="ans"></h1>
+
+    <script>
+        function rv() {
+            let a = document.getElementById("data").value
+            op = ""
+            for (let x = a.length - 1; x >= 0; x--) {
+                op += a[x]
+
+            }
+            document.getElementById("ans").innerHTML = `${op}`;
+        }
+        if(op==a){
+            document.getElementById("ans").innerHTML = `True`;
+        }
+
+        else{
+            document.getElementById("ans").innerHTML = `False`;
+        }
+    </script>
+</body>
+
+</html>

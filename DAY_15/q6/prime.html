@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="" id="data">
+    <button onclick="op()">click</button>
+    <h1 id="ans"></h1>
+
+
+    <script>
+        function op() {
+            let num = document.getElementById("data").value
+
+            for (a = 1; a <= num; a++) {
+                if (prime(a)) {
+                    // document.getElementById("ans").innerHTML = `${a} is prime number`;
+                    console.log(a)
+
+                }
+            }
+            
+            function prime(num) {
+
+                let c = 0
+                for (let a = 1; a <= num; a++) {
+                    if (num % a == 0) {
+                        c++;
+                    }
+
+                }
+                if (c == 2) {
+
+                    return true;
+                }
+                else {
+                    return false;
+                    // document.getElementById("ans").innerHTML=`${c} is not prime number`;
+                }
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

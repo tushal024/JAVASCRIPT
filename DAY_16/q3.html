@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="data">
+    <button onclick="op()">click</button>
+    <h1 id="ans"></h1>
+    <script>
+        function op(){
+
+            a=document.getElementById("data").value
+
+            let cu=0
+            for(x=0;x<=a.length;x++){
+                if(a[x]=="a" || a[x]=="e"|| a[x]=="i" || a[x]=="o"|| a[x]=="u"){
+                    cu++
+                }
+            }
+            document.getElementById("ans").innerHTML=`${cu}`;
+        }
+    </script>
+</body>
+</html>
