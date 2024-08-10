@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="data">
+    <button onclick="st()">click</button>
+    <h1  id="ans"></h1>
+
+
+    <script>
+        function st(){
+                                             
+            a= document.getElementById("data").value
+
+            sum=""
+            count =0
+            for( let x=a.length-1; x>=0;x--){ 
+
+                sum += a[x];
+                if(a[x] =! "a" || a[x] == "e" || a[x] == "i" || a[x] == "o" || a[x] == "u"){
+
+                }
+                else{
+                    
+                    count++;
+                }
+
+            }
+
+            document.getElementById("ans").innerHTML=`${count}`;
+        }
+    </script>
+</body>
+</html>
+
+
