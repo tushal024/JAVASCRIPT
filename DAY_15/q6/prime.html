@@ -12,20 +12,34 @@
     <input type="text" name="" id="data">
     <button onclick="op()">click</button>
     <h1 id="ans"></h1>
+    <h1 id="ans1"></h1>
+
 
 
     <script>
         function op() {
             let num = document.getElementById("data").value
-
+            let pp = ""
+            let u=0
             for (a = 1; a <= num; a++) {
                 if (prime(a)) {
                     // document.getElementById("ans").innerHTML = `${a} is prime number`;
-                    console.log(a)
+                    // console.log(a)
+                    pp += a;
+                    // document.getElementById("ans").innerHTML = `${pp}`;
+                    // document.getElementById("ans1").innerHTML = `${pp[a]}`;
+                    u++;
 
                 }
+                document.getElementById("ans").innerHTML = `${u}`;
+
             }
-            
+            for (a = 0; a <= pp.length; a++) {
+
+                // document.getElementById("ans").innerHTML = `${a}`;
+                // console.log(pp[a])
+            }
+
             function prime(num) {
 
                 let c = 0
