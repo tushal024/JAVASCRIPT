@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #st{
+            width: 400px;
+            height: 600px;
+            background-color: gray;
+            margin: auto;
+        }
+        button{
+            margin-left: 49%;
+            margin-top: 20px;
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            font-size: 20px;
+            background-color: gray;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="st">
+        <!-- <h1 id="dd"></h1> -->
+        
+    </div>
+    <button onclick="st()">click</button>
+</body>
+<script>
+do{
+    st()
+}while(false)
+
+
+function st(){
+        let arr=[{a: 1,b:"😄"},{a:2,b:"😁"},{a:3,b:"🖥"},{a:3,b:"😜"},{a:3,b:"🤦‍♀️"},{a:3,b:"👌"}]
+        let d = Math.floor(Math.random()*arr.length)
+        let e=Math.round(d)
+        // console.log(d);
+        document.getElementById("dd").innerHTML=`${arr[e].b} `
+
+        // console.log(arr[d]);
+        
+    }
+    
+</script>
+</html>

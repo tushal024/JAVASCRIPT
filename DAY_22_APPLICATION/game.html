@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 600px;
+        height: 400px;
+        margin: auto;
+        position: relative;
+        border: 1px solid black;
+    }
+    .main{
+        width: 300px;
+        height: 100px;
+        margin: auto;
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 40px 40px;
+        border: 1px solid black;
+    }
+    #a1,#a2,#a3{
+        width: 33.33%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        border: 1px solid black;
+
+    }
+    #stic{
+        height: 200px;
+        width: 30px;
+        border-radius: 20px 20px 40px 40px;
+        position: absolute;
+        border: 1px solid black;
+    }
+    button{
+        width: 170px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+</style>
+<body>
+    
+    <div class="box">
+        <div id="stic"></div>
+        <div class="main">
+            <div id="a1"></div>
+            <div id="a2"></div>
+            <div id="a3"></div>
+
+        </div>
+        <button onclick="st()">Check Your Luck</button>
+    </div>
+</body>
+<script>
+    do{
+        st()
+    }while(false)
+
+    function st(){
+        let ans=Math.floor(Math.random()*10)
+        document.getElementById("a1").innerHTML=`${ans}`
+
+        let ans1=Math.floor(Math.random()*10)
+
+        document.getElementById("a2").innerHTML=`${ans1}`
+        
+        // document.getElementById("a3").innerHTML=`${ans}`
+
+        let ans2=Math.floor(Math.random()*10)
+
+        document.getElementById("a3").innerHTML=`${ans2} `
+
+        
+
+    }
+</script>
+</html>
