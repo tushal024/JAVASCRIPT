@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="log">
+        <h1>Login.....</h1>
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <button>submit</button>
+        <p id="s1">Go Signup</p>
+    </form>
+
+    <form action="" id="log1" style="display: none;">
+        <h1>Signup......</h1>
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <button>submit</button>
+        <p id="s2">Go Login</p>
+    </form>
+</body>
+<script>
+    let a=document.querySelector("#log")
+   document.querySelector("#s1").addEventListener("click",()=>{
+    document.getElementById("log").style.display="none"
+    document.getElementById("log1").style.display="block"
+   })
+
+   let b=document.querySelector("#log1")
+   document.querySelector("#s2").addEventListener("click",()=>{
+    document.getElementById("log").style.display="block"
+    document.getElementById("log1").style.display="none"
+   })
+
+
+</script>
+</html>
