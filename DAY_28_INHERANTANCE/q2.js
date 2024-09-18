@@ -7,7 +7,7 @@ class leptops{
     }
 
     getValue(){
-        console.log(`${this.Lenovo}'s Price is -${this.Asus}'s Price is - ${
+        console.log(`s Price is -${this.Asus}'s Price is - ${
             this.Infinix}'s Price is - ${this.Keybord}'s Price is - ${this.Mouse}'s Price is`);
     }
 }
