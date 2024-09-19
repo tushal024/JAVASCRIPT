@@ -14,36 +14,36 @@ document.querySelector("#sb").addEventListener("click", () => {
 })
 
 
-
-
-
 s.addEventListener("submit", (ele) => {
     ele.preventDefault()
     let name_1 = document.getElementById("name_1").value
     let pass_1 = document.getElementById("pass_1").value
+    let e_rr=/[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/
+    let passwordregex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
 
-    if(name_1.length<=0){
+
+    if(  e_rr.test(name_1) == false){
         document.getElementById("s_n").innerText=`Plese enter Username`
     }
 
 
-    if(pass_1.length<8){
+    if(passwordregex.test(pass_1)== false){
         document.getElementById("s_p").innerText=`Plese enter Valid password`
     }
-
-    
-
-
     let obj = {
         username: name_1,
         password: pass_1
     }
-    data.push(obj);
-    // console.log(obj);
 
-
-})
+data.push(obj)
+      
+   
 console.log(data);
+})
+
+
+
+
 
 
 let l = document.querySelector("#login")
@@ -89,3 +89,25 @@ l.addEventListener("submit", (ele) => {
     }
 
 })
+
+
+
+function myFunction() {
+    var x = document.getElementById("pass_1");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+
+
+  function myFunction() {
+    var x = document.getElementById("pass_2");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }

@@ -18,14 +18,10 @@ a.addEventListener("submit", (t) => {
     t.preventDefault()
 
 
-
-
-
-
     let username = document.getElementById("signup_username").value
     let passWord = document.getElementById("passWord").value
 
-    if (username.length <= 0) {
+    if (username.length <= 0 && ) {
         document.getElementById("u_e").innerHTML = `Enter Username...`;
     }
     if (passWord.length <= 0) {

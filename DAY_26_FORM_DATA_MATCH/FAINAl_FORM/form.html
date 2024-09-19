@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 98%;
+            height: 90vh;
+            /* background-color: lightpink; */
+            background-image: url(https://i.pinimg.com/originals/a2/fe/21/a2fe21da9ce7d1698f5b48cdb506c853.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-color: rgba(10, 10, 10, 0.212);
+        }
+        #login,#signup{
+            width: 500px;
+            height: 600px;
+            border: 2px solid red;
+            border-radius: 5px;
+            border-radius: 20px;
+            margin-top: 10%;
+            background-color: rgba(255, 255, 255, 0.027);
+            background-blend-mode: overlay;
+            
+        }
+        input{
+            width: 80%;
+            border-radius: 20px;
+            background-color: transparent;
+            border: 2px solid black;
+           
+            /* font-size: 17px; */
+            height: 40px;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+        select{
+            width: 80%;
+            border-radius: 20px;
+
+            height: 40px;
+        }
+        #show,#showw{
+            width: 16px;
+            height: 14px;
+            color: white !important;
+            /* float: left; */
+
+            /* margin-left: -0px; */
+       
+        }
+        #nn{
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <form action="" id="signup">
+        <h1 style="color: white;">.....Signup......</h1>
+        <input type="text" name="" id="user" placeholder="    Username">
+        <br><br>
+        <input type="text" name="" id="name_1" placeholder="   Email..."> <br>
+        <span id="s_n" style="font-size: 20px; color:red ; font-weight: bold;   "></span> <br>
+        <input type="password" name="" id="pass_1" placeholder="   Password..."> <br>
+        <span id="s_p" style="font-size: 20px; color:red  ; font-weight: bold;  "></span> <br>
+
+        <input type="checkbox" onclick="myFunction()" id="show"> <span style="color:white;"> Show Password </span>
+        <!-- <input type="checkbox" id="nn"> -->
+                
+        <br><br>
+
+        <input type="text" placeholder="   Hobby"><br>
+        <br><br>
+        <select name="" id="gender" style="background-color: transparent; color: white; border: 1px solid black; width: 83%; height: 40px;">
+            <option value="" style="font-size: 17px !important;"> &nbsp; &nbsp; Gender</option>
+            <option value="">Male</option>
+            <option value="">Female</option>
+            <option value="">Outher</option>
+        </select><br>
+        <span id="genderText"></span>
+        <br><br>
+        <input type="submit" name="" id=" " style=" color: darkblue;   font-size: 20px; background-color: rgb(250, 248, 248);"> <br>
+        <p id="lb" style="font-size: 18px; margin-top: 30px;">Existing User? Log in</p>
+    </form>
+
+    <form action="" id="login" style="display: none;">
+        <h1 style="color: white;">.....Login......</h1>
+        <input type="text" name="" id="name_2" placeholder="   Email..."> <br>
+        <samp id="l_n" style="font-size: 20px; color:red ;font-weight: bold;   "></samp> <br>
+        <input type="password" name="" id="pass_2" placeholder="   Password..."> <br>
+        <span id="l_p" style="font-size: 20px; color:red; font-weight: bold;  "></span> <br>
+
+
+        <input type="checkbox" onclick="myFunction()" id="showw"> <span style="color:white;"> Show Password </span>
+      <br><br>
+
+
+        <input type="submit" name="" id="" style=" color: darkblue;   font-size: 20px; background-color: rgb(250, 248, 248);"> <br>
+        <p id="sb" style="color: white;">SIGNUP.........</p>
+    </form>
+</center>
+</body>
+<script src="script_1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
+
