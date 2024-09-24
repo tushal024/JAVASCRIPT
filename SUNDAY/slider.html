@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 800px;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: auto;
+
+
+            #im {
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="im">
+
+        </div>
+    </div>
+    <center>
+<br><br>
+    <button onclick="prev()">PREV</button>
+    <button onclick="next()">NEXT</button>
+</center>
+    <script>
+        let arr = ["https://cdn.pixabay.com/photo/2024/07/24/15/55/ai-generated-8918729_640.png",
+            "https://www.shutterstock.com/shutterstock/photos/2481099653/display_1500/stock-photo-moody-portrait-photo-of-create-a-high-resolution-k-image-of-lord-shiva-the-revered-deity-in-hindu-2481099653.jpg",
+            "https://www.hdwallpapers.in/download/lord_shiva_and_parvati_hd_mahadev-1366x768.jpg",
+        ]
+
+        let x = 0
+        // console.log(arr.length);
+
+        do {
+            document.getElementById("im").innerHTML = `<img src="${arr[2]}"  width="100%" height=100%> `
+            //  document.getElementById("im").style=`width=100%`
+            // arr[0]
+        } while (false)
+
+
+
+        setInterval(() => {
+                x--
+            if (x == -1) {
+                x = arr.length - 1
+            }
+
+            if (x == 3) {
+                x = 0
+
+            }
+            document.getElementById("im").innerHTML = `<img src="${arr[x]}" width="100%" height=100%>`
+            console.log(x);
+
+
+            }, 2000)
+        function prev() {
+
+            x--
+            if (x == -1) {
+                x = arr.length - 1
+            }
+
+            if (x == 3) {
+                x = 0
+
+            }
+            document.getElementById("im").innerHTML = `<img src="${arr[x]}" width="100%" height=100%>`
+            console.log(x);
+
+
+
+           
+
+           
+        }
+
+
+        function next() {
+            x++
+            if (x == -1) {
+
+                x = 0
+                //   document.getElementById("im").innerHTML=`<img src="${arr[1]}">`
+
+            }
+
+            if (x == arr.length) {
+                x = 0
+            }
+
+            document.getElementById("im").innerHTML = `<img src="${arr[x]}" width="100%" height=100%>`
+            console.log(x);
+
+        }
+    </script>
+</body>
+
+</html>
