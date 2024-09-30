@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 700px;
+            border: 10px solid black;
+            margin: auto;
+            display: flex;
+            gap: 30px;
+            height: 400px;
+
+        }
+        button{
+            /* margin: a?; */
+            /* margin-left: 40%; */
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 id="u1">00</h1>
+        <h1 id="u2">00</h1>
+        <h1 id="u3">00</h1>
+
+
+    </div>
+    <center>
+
+    <button onclick="start()">START</button>
+    <button onclick="stop()">STOP</button>
+</center>
+
+
+
+    <script>
+        let uu;
+
+      function start(){
+        let h=document.getElementById("u1")
+        let m=document.getElementById("u2")
+        let s=document.getElementById("u3")
+
+
+        uu= setInterval(()=>{
+            let date= new Date()
+
+            h.innerHTML=date.getHours()
+            m.innerHTML=date.getMinutes()
+            s.innerHTML=date.getSeconds()
+        })
+      }
+
+      function stop(){
+        clearInterval(uu)
+      }
+    </script>
+</body>
+
+</html>

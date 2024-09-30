@@ -7,15 +7,7 @@ function start() {
     let oo = document.getElementById("oo");
     a = setInterval(() => {
         let date = new Date();
-
-
-        // let newformat = hour >= 12 ? '  PM' : '  AM';
-        // hour.innerHTML = date.getHours() - 12
-        // min.innerHTML = date.getMinutes()
-        // sec.innerHTML = date.getSeconds()
-        // oo.innerHTML = `   ${newformat}`
-        // oo.style.marginLeft = "20px"
-         let h=date.getHours()
+         let h=String(date.getHours()).padStart(2,"00")
          let m=date.getMinutes()
          let s=date.getSeconds()
          let tt="AM";
@@ -37,10 +29,4 @@ function stop() {
     clearInterval(a)
 }
 
-
-
-
-// const currentDate = new Date();
-// const currentTime = currentDate.toLocaleTimeString([],
-//     { hour: 'numeric', minute: 'numeric', hour12: true });
 

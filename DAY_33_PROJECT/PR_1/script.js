@@ -15,9 +15,9 @@ function start() {
         // sec.innerHTML = date.getSeconds()
         // oo.innerHTML = `   ${newformat}`
         // oo.style.marginLeft = "20px"
-         let h=date.getHours() %12|| 12;
-         let m=date.getMinutes()
-         let s=date.getSeconds()
+         let h= String(date.getHours()).padStart(2,"0");
+         let m= String(date.getMinutes()).padStart(2,"0");
+         let s= String(date.getSeconds()).padStart(2,"0");
          let tt="AM";
          if(h>12){
             h -=12;
@@ -29,13 +29,13 @@ function start() {
          document.getElementById("num").innerHTML=s;
          document.getElementById("oo").innerHTML=tt;
 
+
+
     }, 1000)
 }
 function stop() {
     clearInterval(a)
 }
-
-
 
 
 

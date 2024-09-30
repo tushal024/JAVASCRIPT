@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="carts.html">
+    
+    <style>
+        body{
+
+            /* background-color: #F1F3F6; */
+            /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_3KjvGCEiXW0pitGfT4tQXxwDEgeOcOVOA&s); */
+        }
+        #card{
+            width: auto;
+            /* height: 1000px; */
+            /* border: 1px solid black; */
+            display: flex;   
+            flex-wrap: wrap;
+        }
+        form{
+            width: 600px;
+            margin: auto;
+            background-color: rgb(194, 191, 191);
+            height:auto;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 20px;            
+        }
+        input{
+            width: 400px;
+            /* margin: auto; */
+            height: 24px;
+            border-radius: 8px;
+        }
+        #btt{
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: -5px;">Add Cart Details</h1>
+    <form action="" id="pr_form">
+        <input type="text" name="" id="title" placeholder="   Titile"> <br><br>
+        <input type="text" name="" id="img" placeholder="   Img URL"> <br><br>
+        <input type="text" name="" id="price" placeholder="   Price"> <br><br>
+        <input type="submit" name="" id="btt" onclick="show() ,dd()">
+
+    </form>
+    
+    <div id="card" style="width: 100%;   height: auto;     justify-content: space-between; align-items: center; display: flex; flex-wrap: wrap; display: none;" >
+    </div>
+    <script src="card.js"></script>
+</body>
+</html>

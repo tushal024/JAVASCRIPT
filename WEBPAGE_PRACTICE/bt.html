@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button{
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            /* margin: auto; */
+            margin: auto;
+            font-size: 20px;
+            margin-top: 20%;
+            position: relative;
+
+        }
+
+        ::after{
+            content: " ";
+            position: absolute;
+            /* z-index: 1; */
+            top: 0;
+            right: 0;
+            width: 100%;
+            transition: 2s;
+            height: 0%;
+            color: black;
+            opacity: 0.5;
+            background-color: gray;
+        }
+        button:hover{
+            /* transform: scale(0.9); */
+        
+            transition: 1s;
+        }
+        button:hover::after{
+            height: 100%;
+            color:black;
+            /* z-index: 1; */
+        }
+    </style>
+</head>
+<body>
+    <center>
+
+    <button> SUBMIT BUTTON</button>
+</center>
+</body>
+</html>
