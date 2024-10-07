@@ -1,4 +1,5 @@
-let arr= JSON.parse(localStorage.getItem("data")) || []
+let cart=[]
+let product= JSON.parse(localStorage.getItem("data")) || []
 
 document.querySelector("#form").addEventListener("submit",(el)=>{
    el.preventDefault();
@@ -15,16 +16,28 @@ document.querySelector("#form").addEventListener("submit",(el)=>{
    }
 
 
-   arr.push(obj);
-   localStorage.setItem("data",JSON.stringify(arr));
+   product.push(obj);
+   localStorage.setItem("data",JSON.stringify(product));
 
+
+    let result = JSON.parse(localStorage.getItem("data"))
    document.getElementById("cart").innerHTML=show()
+
 })
 
+document.getElementById("cart").innerHTML=show()
 
 function show(){
-   return arr.map(el =>{
-      return `${el.img} -- ${el.title} -- ${el.price} <br>`
-   })
+   return product.map((el,index) =>{
+      return `<img src="${el.img}">  <br>
+         ${el.title} <br> 
+         ${el.price} <br>
+         <button onClick="add(${index})">ADD TO CART</button>
+         `
+   }).join(" ")
 
+}
+function add(index){
+   cart.push(product[index])
+   localStorage.setItem("cart",JSON.stringify(cart))
 }

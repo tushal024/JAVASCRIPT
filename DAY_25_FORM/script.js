@@ -8,9 +8,7 @@ a.addEventListener("submit",(e)=>{
     
     let password=document.getElementById("pass").value
     
-if(username.length ==0){
-    document.querySelector("#Username").innerHTML=`plese`;
-}
+
 
     let obj={
         username :username,

@@ -33,7 +33,7 @@ return product.map((el,index)=>{
                 <p style="font-size: 18px; font-weight: bold; margin-top: -7px;">$ ${el.price} /-</p>
                 <p style="color: green;">Free Delhivery</p>
                 <p style="background-color: rgb(206, 200, 200); padding: 3px; border-radius: 3px; display: inline-block; margin-top: -20px;">Top Discount Of The Sale</p>
-                <button onclick="cc(${index})"  > Add To Cart</button>
+                <button onclick="addd(${index})"  > Add To Cart</button>
             </div>
         </div>
        
@@ -46,19 +46,36 @@ return product.map((el,index)=>{
 function dd(){
     document.getElementById("card").style.display='flex'
 }
-
-
-
-
 document.getElementById("add").innerHTML=cc()
 
+// function cc(){
+//     return product.map((el,index) =>{
+//         return `${index} ==  ${el.img} == ${el.title} == ${el.price}`
+//     }).join(" ")
+
+// }
 
 
 
-function cc(){
-    return product.map((el,index) =>{
-        return `${index} ==  ${el.img} == ${el.title} == ${el.price}`
+let cart=  JSON.parse(localStorage.getItem("cartt")) || []
+
+function addd(index){
+    cart.push( product(index))
+    localStorage.setItem("cartt",JSON.stringify(cart))
+
+}
+
+document.getElementById("add").innerHTML=vieww()
+function vieww(){
+    return cartt.map((el,index)=>{
+        return `${index} ==  ${el.img} == ${el.title} == ${el.price}  <button onclick="del()">DELATE</button>`
+
     }).join(" ")
 
 }
 
+function del(index){
+    catt.splice(index,1)
+    document.getElementById("add").innerHTML=vieww()
+
+}

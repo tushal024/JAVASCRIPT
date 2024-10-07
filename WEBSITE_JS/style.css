@@ -1,6 +1,28 @@
 *{
     
 }
+
+
+ #main {
+
+            width: 1000px;
+            height: auto;
+            /* margin-top: 70px; */
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            margin: auto;
+
+    /* color: ; */
+           
+        }
+
+        #im {
+            width: 100%;
+            /* margin-top: 90px; */
+            height: 100%;
+
+        }
+
 .sen11_1{
     background-image: url(Assets/p1.webp);
     background-position: center;
@@ -69,4 +91,22 @@
     background-repeat: no-repeat;
     border-radius: 10px;
     background-size: cover;
+}
+/* .sen51{
+    background-image: url(/Assets/round2.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+
+
+.s_h1:hover{
+    cursor: pointer;
+}
+
+
+
+#Register{
+    display: none;
 }

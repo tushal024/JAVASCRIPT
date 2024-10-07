@@ -27,7 +27,7 @@ s.addEventListener("submit", (ele) => {
     }
 
 
-    if(passwordregex.test(pass_1)== false){
+    if(passwordregex.test(pass_1) == false){
         document.getElementById("s_p").innerText=`Plese enter Valid password`
     }
     let obj = {

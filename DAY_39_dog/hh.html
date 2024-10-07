@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box{
+            flex-wrap: wrap;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+   
+
+</div>
+
+<script>
+    fetch(`https://fakestoreapi.com/products`).then((t)=>{
+      return t.json()  
+    })
+    .then((res)=>{
+        // console.log(res);
+        document.getElementById("box").innerHTML=view(res)        
+    })
+    .catch((cre)=>{
+        console.log(cre);
+        
+    })
+
+
+    function view(tt){
+        return tt.map((el)=>{
+            return ` <div>
+        <div>
+            <img src="${el.image}" alt="" width="200px" height="200px">
+
+        </div>
+        <div>
+            <h4>${el.title}</h4>
+            <p> $ ${el.price}</p>
+        </div>
+    </div> `
+        })
+
+    }
+
+
+
+</script>    
+</body>
+</html>
