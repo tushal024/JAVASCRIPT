@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    background-color: #111111;
+}
+#box{
+    width: 100%;
+    padding: 10px;
+     /* display: grid;
+    grid-template-columns: (4,20%);  */
+    display: flex;
+     justify-content: space-between; 
+    flex-wrap: wrap;
+    align-items: center; 
+}
+img{
+    width:100%;
+    height: 440px;
+
+}
+#op{
+    height: 500px;
+    width: 24%;
+}
+
+#igu{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid red; */
+}
+
+
+#her{
+    width: 100%;
+    /* padding-top: 10px; */
+    height: 10%;
+    /* border: 1px solid red; */
+}
+
+
+
+
+#he{
+    width: 100%;
+    padding-top: 14px;
+background-color: #0C2A2A;
+background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPmXi9aaRsrSjUjjnGz1NHv4KtGsPcBBo62Q&s);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+    height: 60px;
+    /* background-color: gray; */
+
+}
+#in{
+    width: 40%;
+    /* background-color: black; */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9S7masFDtU0eQkLa6I6OkHyxe3PEOFwXSA&s);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-left: 20px;
+    height: 30px;
+    border-radius: 10px;
+}
+#in::placeholder{
+    color: white;
+}
+
+
+#opc{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9S7masFDtU0eQkLa6I6OkHyxe3PEOFwXSA&s);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    option{
+        color: black;
+    }
+}
