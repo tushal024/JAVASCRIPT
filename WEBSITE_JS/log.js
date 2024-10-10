@@ -1,6 +1,6 @@
 var a = document.querySelector("#Register")
 let add = [] ;
-let isValid = false;
+let isValid = true;
 
 const emailRegex = /[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/;
     // const passRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@.#$!%?&^])[A-Za-z\d@.#$!%?&]{8,15}$/;

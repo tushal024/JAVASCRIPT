@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <style>
+        body {
+            height: 90vh;
+
+
+        }
+
+        #bb {
+
+            background-image: url(https://w0.peakpx.com/wallpaper/733/553/HD-wallpaper-storm-dark-weather-thumbnail.jpg);
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.539);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: 280px;
+            text-align: center;
+            padding: 10px;
+            height: 400px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: auto;
+
+        }
+
+        #city {
+            width: 60%;
+            height: 30px;
+            border-radius: 10px;
+            margin-left: 30px;
+            color: black;
+            background-color: white;
+        }
+
+        #city::placeholder {
+            color: black;
+        }
+
+        #bt {
+            width: 50px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 30px;
+        }
+
+        img {
+            width: 100px;
+            margin-top: -30px;
+        }
+
+        #u,
+        #u1,
+        #u2 {
+            width: 100%;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid white; */
+            border-bottom: 1px solid white;
+
+            display: flex;
+        }
+
+        #g1,
+        #g2 {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 10px;
+            color: white;
+            height: 100%;
+            /* border: 1px solid white; */
+        }
+
+        #g2 {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-left: 10px;
+            margin-right: 10px;
+            color: white;
+            height: 100%;
+            /* text-align: end; */
+        }
+
+        #cc {
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="city" placeholder="   Enter City Name">
+    <button id="bt"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div id="box">
+        <!-- <div id="bb">
+            <h2 id="cc">${ct1}</h2>
+            <h1>24 C <sup>.</sup> </h1>
+            <img src="http://openweathermap.org/img/w/${g.weather[0].icon}.png" alt="">
+
+            <div id="u">
+                <div id="g1">
+                    <p>visibility</p>
+                </div>
+                <div id="g2">
+                    ${g.visibility}</div>
+            </div>
+            <div id="u1">
+                <div id="g1">
+                    <p>wind Speed</p>
+                </div>
+                <div id="g2">${g.wind.speed}</div>
+            </div>
+            <div id="u2">
+                <div id="g1">description</div>
+                <div id="g2">${g.weather[0].description}</div>
+            </div>
+        </div>  -->
+    </div>
+    <!-- <button ></button> -->
+
+    <script>
+
+
+
+
+
+        document.getElementById("bt").addEventListener("click", ss)
+
+        function ss() {
+            let ct = document.getElementById("city").value
+            let ct1 = ""
+
+            if (ct == "") {
+                ct1 = "Rajkot"
+            }
+            else {
+                ct1 = ct
+            }
+
+
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ct1}&appid=6391c2edb2c7c1740d79c1eb29243b72&units=metric`)
+            
+
+            
+                .then((r) => {
+                    return r.json();
+                })
+                .then((res) => {
+                    console.log(res);
+                    document.getElementById("box").innerHTML = view(res)
+                })
+                .catch((er) => {
+                    console.log(er);
+
+                })
+        }
+
+        function view(g) {
+            return `
+
+<div id="bb">
+<input type="text" name="" id="city" placeholder="   Enter City Name">
+<button id="bt"  ><i class="fa-solid fa-magnifying-glass"></i></button>
+<h2 id="cc">${ct1}</h2>
+<h1>24 C <sup>.</sup> </h1>
+<img src="http://openweathermap.org/img/w/${g.weather[0].icon}.png" alt="">
+
+<div id="u"> 
+<div id="g1">
+    <p>visibility</p>
+</div>
+<div id="g2">
+${g.visibility}</div>
+</div>
+<div id="u1">
+<div id="g1">
+    <p>wind Speed</p>
+</div>
+<div id="g2">${g.wind.speed}</div>
+</div>
+<div id="u2">
+<div id="g1">description</div>
+<div id="g2">${g.weather[0].description}</div>
+</div>
+</div>
+`
+        }
+
+
+        ss()
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
