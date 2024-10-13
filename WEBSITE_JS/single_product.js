@@ -12,13 +12,11 @@ fetch(`http://localhost:3000/product?id=${idd}`)
       
         document.getElementById("box1").innerHTML = view(res)
        
-        document.getElementById("ac").addEventListener("click",()=>{
+        document.getElementById("ac ").addEventListener("click",()=>{
 
         add_to_cart(res)
            
         })
-    
-       
         
     })
     .catch((er) => {
@@ -70,10 +68,8 @@ fetch(`http://localhost:3000/product?id=${idd}`)
                     
                 })
                    
-
             }
-            
-            
+                    
         })
         .catch((er)=>{
             console.log(er);

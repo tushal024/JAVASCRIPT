@@ -11,6 +11,41 @@
   let oo= document.getElementById("opc")
 
 
+
+  let dis=""
+  if(name1.value==""){
+    dis="Movies"
+  }
+  else{
+    dis=name1.value
+  }
+
+
+
+
+(function(){
+    
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e7589c6e&s=${dis}`)
+    .then((r)=>{
+        return r.json()
+    })
+    .then((res)=>{
+        console.log(res);
+        document.getElementById("box").innerHTML=view(res.Search)
+
+
+        
+    })
+    .catch((er)=>{
+        console.log(er);
+    })
+
+    
+
+}
+)();
+
+
 document.getElementById("opc").addEventListener("change",()=>{
     // console.log(movv.value);
     //  m=movv.value
@@ -85,7 +120,7 @@ function view(arr){
         </div>
         
         `
-    })
+    }).join("")
 
 }
 
@@ -95,17 +130,10 @@ function view(arr){
 
 
 
-fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e7589c6e&s=tom and jerry`)
-    .then((r)=>{
-        return r.json()
-    })
-    .then((res)=>{
-        console.log(res);
-        document.getElementById("box").innerHTML=view(res.Search)
 
 
-        
-    })
-    .catch((er)=>{
-        console.log(er);
-    })
+
+
+
+
+
