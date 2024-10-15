@@ -10,9 +10,10 @@ fetch(`http://localhost:3000/product?id=${idd}`)
     })
     .then((res) => {
       
-        document.getElementById("box1").innerHTML = view(res)
+        document.getElementById("box1").innerHTML = view(res)    
        
-        document.getElementById("ac ").addEventListener("click",()=>{
+        document.getElementById("ac").addEventListener("click",()=>{
+            patchData(res)
 
         add_to_cart(res)
            
@@ -53,7 +54,7 @@ fetch(`http://localhost:3000/product?id=${idd}`)
                     headers: {
                         "content-type":"application/json"
                     },
-                    body: JSON.stringify(res[0])
+                    body: JSON.stringify({...res[0],quantity:1})
 
                 })
                 .then((r)=>{
@@ -63,6 +64,9 @@ fetch(`http://localhost:3000/product?id=${idd}`)
                     console.log(res);
                     
                 })
+
+
+
                 .catch((err)=>{
                     console.log(err);
                     
@@ -155,4 +159,20 @@ function view(arr) {
 
 
 
+function patchData(res){
+    fetch(`http://localhost:3000/single_product`,{
+        method:"PATCH",
+        headers: {
+            "content-type":"application/json"
+        },
+        body: JSON.stringify({...res[0],quantity:1})
 
+    })
+    .then((r)=>{
+        return r.json();
+    })
+    .then((res)=>{
+        console.log(res);
+        
+    })
+}

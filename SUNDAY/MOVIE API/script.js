@@ -1,33 +1,54 @@
-function fetchData(movieName="money",idName="slo"){
+function fetchData(movieName = "money", idName = "slo") {
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e7589c6e&s=${movieName}`)
-    .then((r) => {
-        return r.json();
-    })
-    .then((res) => {
-       
+        .then((r) => {
+            return r.json();
+        })
+        .then((res) => {
 
-        document.getElementById(idName).innerHTML = view(res.Search)
 
-    })
-    .catch((er) => {
-        console.log(er);
+            document.getElementById(idName).innerHTML = view(res.Search)
+            document.getElementById("un2").addEventListener("click", () => {
+                fetch(`http://localhost:3000/single`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(res[0])
+                })
+            })
+                .then((r) => {
+                    return r.json();
+                })
+                .then((res) => {
+                    console.log(res);
 
-    })
+
+                })
+                .catch((er) => {
+                    console.log(er);
+
+                })
+
+        })
+        .catch((er) => {
+            console.log(er);
+
+        })
 
 }
 
 fetchData("money")
-fetchData("money","cc")
-fetchData("tiger","super")
-fetchData("fight","super1")
-fetchData("cartoon","super2")
+fetchData("money", "cc")
+fetchData("tiger", "super")
+fetchData("fight", "super1")
+fetchData("cartoon", "super2")
 
 
-function view(arr){
-    return arr.map((e,index=1)=>{
-        return`
+function view(arr) {
+    return arr.map((e, index = 1) => {
+        return `
 
-            <a href="single_page.html?id=${index}" id="un"  onclick="un()"> <img src="${e.Poster}" class="sl_i" id="un">  </a> `
+            <a href="single_page.html?id=${index}&movie=${e.imdbID}" id="un1"  onclick="un()"> <img src="${e.Poster}" class="sl_i" id="un2">  </a> `
 
     }).join("")
 
@@ -51,8 +72,9 @@ fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e7589c6e&s=money&id=${idu}`)
     })
     .then((res) => {
         console.log(res.Search[idu]);
-        document.getElementById("tun").innerHTML=view1(res.Search[idu])
-      
+        document.getElementById("imm").innerHTML = view1(res.Search[idu])
+        document.getElementById("tun").innerHTML = view2(res.Search[idu])
+
     })
     .catch((er) => {
         console.log(er);
@@ -64,12 +86,20 @@ fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e7589c6e&s=money&id=${idu}`)
 
 function view1(el) {
 
-return `  <img src="${el.Poster}" >   <h1>${el.Title}</h1>`
+    return `  <img src="${el.Poster}" >   `
 
-   
+
 }
 
+function view2(el) {
+    return `<h1>${el.Title}</h1>
+   
+    <p class="year">Year - ${el.Year}</p>
+   
 
+    <button class="watch"> <i class="fa-solid fa-play ic"></i>   Watch</button>
+    `
+}
 
 
 

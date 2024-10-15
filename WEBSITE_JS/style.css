@@ -110,3 +110,23 @@
 #Register{
     display: none;
 }
+
+#vc{
+    border: 1px solid black;
+    width: 50px;
+    text-align: center;
+    display: inline-block;
+}
+.aq{
+    /* display: flex; */
+}
+.ff{
+    width: 100%;
+    display: flex;
+}
+
+.ddd{
+    width: 30px;
+    border: 1px solid black;
+    display: inline-block;
+}

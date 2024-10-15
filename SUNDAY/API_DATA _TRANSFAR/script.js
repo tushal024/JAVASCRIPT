@@ -20,7 +20,7 @@ fetchData()
 
 function view(arr){
     return arr.map((e,index)=>{
-        return `  <a href="single.html?id=${index}" id="one"> <img src="${e.img}">  </a>`
+        return `  <a href="single.html?id=${index}&movie=" id="one"> <img src="${e.img}">  </a>`
     })
 }
 
