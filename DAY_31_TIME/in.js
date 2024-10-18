@@ -9,15 +9,9 @@ let arr=["https://i.pinimg.com/736x/fd/89/cc/fd89cce0b421b6b4d37959ffc4422efc.jp
 ]
 
 
-let x=0
-
-
-
+let x=0;
 
 function prev(){
-
-
-
 
     setInterval(()=>{
         document.getElementById("box").innerHTML=`<img src="${arr[x]}" height="100%" width="100%" > `

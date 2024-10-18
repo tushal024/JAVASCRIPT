@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>     
+    <style>
+       #signup{
+        /* display: none; */
+       }
+    </style>
+</head>
+<body>
+    <form action="" id="signup">
+        <h1>SIGNUP........................................</h1>
+        <input type="text" name="" id="n1">
+        <input type="text" name="" id="p1">
+        <input type="submit" name="" id="">
+        <p id="logi">GO TO LOGIN</p>
+
+    </form>
+
+
+    <form action="" id="log">
+        <h1>LOGIN.............................................</h1>
+        <input type="text" name="" id="n2">
+        <input type="text" name="" id="p2">
+        <input type="submit" name="" id="">
+        <p id="sig">GO TO SIGNUP</p>
+
+    </form>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+            $("#signup").hide()
+            $("#sig").click(function(){
+                $("#signup").show()
+                $("#log").hide();
+            })
+            $("#logi").click(function(){
+                $("#signup").hide()
+                $("#log").show();  
+            })
+        })
+
+
+    </script>
+</body>
+</html>

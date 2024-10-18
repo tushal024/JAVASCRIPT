@@ -130,3 +130,27 @@
     border: 1px solid black;
     display: inline-block;
 }
+
+.tollyy{
+    position: relative;
+    margin-top: 0px;
+    height: 60px;
+    /* z-index: -1; */
+}
+#toll{
+    position: absolute;
+    top: 10px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20%;
+    /* background-color: #FFD91C; */
+    /* left:  */
+    color: #FF7043;
+    /* right: 10px; */
+    /* left: 1px; */
+    left:24px;
+    /* z-index: 1; */
+}

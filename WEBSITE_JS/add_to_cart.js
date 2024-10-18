@@ -1,20 +1,25 @@
+
+
+
+
+let total=0;
+let tolly;
 fetch(`http://localhost:3000/single_product`)
     .then((r) => {
         return r.json();
     })
     .then((res) => {
+        
         console.log(res);
         document.getElementById("tb").innerHTML = view(res)
 
-
-       
-
-
-
-
+    total +=res[0].price
+        console.log(res[0].price);
+        console.log(total);
+        // console.log();
+        tolly = res.length;
+    document.getElementById("toll").innerHTML=tolly        
         // console.log(res.length);
-
-
 
     })
     .catch((er) => {
@@ -22,22 +27,23 @@ fetch(`http://localhost:3000/single_product`)
 
     })
 
+
+
+
+
 // let k;
 let m = 0;
 function view(arr) {
+    let to=0;
     return arr.map((el, index) => {
       
-        // let k= k+index
-        // for ( k = arr.length-1; k <= arr.length; k++) {
-    //   if(index )      
-
-        // }
-        // console.log(k);
+      
+        to += el.price*el.quantity
+        document.getElementById("total").innerHTML=` $${to.toFixed(2)}/-`
+        // console.log(to);
         
         return `
-            
-      
-            
+                
             <tr>
             <td class="tdd"  style="   border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px;">
             <img src="${el.img}" alt="">
@@ -45,14 +51,14 @@ function view(arr) {
             <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px;">
             <p class="mb-[10px]"> ${el.dis}</p>
             </td>
-            <td style="  font-weight: bold; border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px;">
-            $${el.price}/-
+            <td id="pree" style="  font-weight: bold; border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px;">
+          $${(el.price*el.quantity).toFixed(2)}/-
             </td>
             
             <td  class="aq" style="border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px; font-weight: bold;">
             <div class="ff">
             <button class="ddd" onclick="click1(${el.id},${el.quantity},'dd')">-</button>
-            <input type="text"  value="${el.quantity}" disabled  id="vc" name="" id="" placeholder="dasd">
+            <input type="text"  value="${el.quantity}" disabled  id="vc" name=""  placeholder="dasd">
             <button class="ddd"  onclick="click1(${el.id},${el.quantity},'dd1')">+</button>
             </div>
             <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px ;   padding-top: 5px ; padding-bottom: 5px;">
@@ -62,55 +68,29 @@ function view(arr) {
             
             </td>
             <td>
-           
-            <p id="pro"   >  ${m = m + el.price} </p>
+             
             </td>
             </tr>       
-               
-        
-        
         `
 
     }).join("");
-}
-// console.log(k);
-
-
-
-
-
-
-function showw(pr) {
-    document.getElementById("totall").innerHTML = `${m}`
 
 }
 
-
-// let m =0
-
-
-
-
-function click1(id, quantity, click, dell) {
+function click1(id, quantity, click, price) {
 
     let a = quantity;
     if (click == 'dd1') {
         a = a + 1;
+        document.getElementById("pree").innerHTML=price*a;
     }
     else if (click == 'dd') {
         a = a - 1
         if (a <= 0) {
-            fetch(`http://localhost:3000/single_product/${id}`, {
-                method: "DELETE",
-            })
-                .then((res) => {
-                    return res.json();
-                })
+          
+            document.getElementById("vc").setAttribute("disabled")
         }
-
     }
-
-
 
     fetch(`http://localhost:3000/single_product/${id}`, {
         method: "PATCH",

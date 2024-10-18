@@ -1,4 +1,4 @@
-// console.log(a);
-var a=2;
-let b= a**3
-console.log(b);
+// let a = [1, 2]; 
+// let b = [1, 2];
+//  console.log(a === b);
+
